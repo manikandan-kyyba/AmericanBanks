@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "bank of america services",
+            "invocationName": "smart banking services",
             "intents": [
                 {
                     "name": "AMAZON.CancelIntent",

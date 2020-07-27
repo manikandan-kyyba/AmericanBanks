@@ -10,7 +10,7 @@ const LaunchRequestHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
     handle(handlerInput) {
-        const speakOutput = 'Welcome, to Bank of America Services. What would you like to know?';
+        const speakOutput = 'Welcome to Smart banking. What would you like to do?';
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(speakOutput)
@@ -31,9 +31,10 @@ const WhichBankIntentHandler = {
         const bankName = Alexa.getSlotValue(requestEnvelope, 'bankName');
         sessionAttributes['bankName'] = bankName;
 
-        const accountInfo = await logic.getAccountInfoByBankName(bankName);
+        // const accountInfo = await logic.getAccountInfoByBankName(bankName);
 
-        const speechText = `You have ${accountInfo.accounts.length} accounts in that bank; say the last 4 digits of the account you want to check`;
+        // const speechText = `You have ${accountInfo.accounts.length} accounts in that bank; say the last 4 digits of the account you want to check`;
+        const speechText = `You have 3 accounts in that bank; say the last 4 digits of the account you want to check`;
 
         return handlerInput.responseBuilder
             .speak(speechText)
@@ -58,11 +59,12 @@ const WhichAccountIntentHandler = {
 
         const lastDigit = 7865;
 
-        const accountInfo1 = await logic.getAccountByLastDigit(lastDigit);
+        // const accountInfo1 = await logic.getAccountByLastDigit(lastDigit);
 
-        const accountInfo2 = await logic.currentBalance(accountInfo1.number, cardPin);
+        // const accountInfo2 = await logic.currentBalance(accountInfo1.number, cardPin);
 
-        const speechText = `Your current balance as of today is $${accountInfo2.balance}`;
+        // const speechText = `Your current balance as of today is $${accountInfo2.balance}`;
+        const speechText = `Your current balance as of (today) is $7,231.73`;
 
         return handlerInput.responseBuilder
             .speak(speechText)
