@@ -1,0 +1,174 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "bank of america services",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "WhichBankIntent",
+                    "slots": [
+                        {
+                            "name": "bankName",
+                            "type": "AMAZON.SearchQuery",
+                            "samples": [
+                                "{bankName}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "check my bank account"
+                    ]
+                },
+                {
+                    "name": "WhichAccountIntent",
+                    "slots": [
+                        {
+                            "name": "cardPin",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{cardPin}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "seven eight six five"
+                    ]
+                },
+                {
+                    "name": "CheckStatusIntent",
+                    "slots": [],
+                    "samples": [
+                        "Do you know if check four one two cleared"
+                    ]
+                },
+                {
+                    "name": "SwitchAccountIntent",
+                    "slots": [
+                        {
+                            "name": "lastDigit",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{lastDigit}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Switch Account"
+                    ]
+                },
+                {
+                    "name": "CurrentBankIntent",
+                    "slots": [],
+                    "samples": [
+                        "one three nine one"
+                    ]
+                },
+                {
+                    "name": "LastDepositeStatusIntent",
+                    "slots": [],
+                    "samples": [
+                        "When was the last deposit into my account"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "WhichBankIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "bankName",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.623276675530.1382733373900"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "WhichAccountIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "cardPin",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1457103854670.36037805696"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "SwitchAccountIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "lastDigit",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1409908028692.1317101176852"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.623276675530.1382733373900",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Ok. Bank Account. Which Bank"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1457103854670.36037805696",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Accessing your bank account, Please say you bank card PIN"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1409908028692.1317101176852",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "You have three accounts say the last four digits of the account you want to check"
+                    }
+                ]
+            }
+        ]
+    }
+}

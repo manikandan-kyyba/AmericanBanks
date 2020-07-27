@@ -1,0 +1,35 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:393807957544:function:a898ef34-3ca3-4f94-ac87-221f4040f656:Release_0"
+        },
+        "regions": {
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:393807957544:function:a898ef34-3ca3-4f94-ac87-221f4040f656:Release_0"
+            }
+          },
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:393807957544:function:a898ef34-3ca3-4f94-ac87-221f4040f656:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:393807957544:function:a898ef34-3ca3-4f94-ac87-221f4040f656:Release_0"
+            }
+          }
+        }
+      }
+    },
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "American Banks"
+        }
+      }
+    }
+  }
+}
