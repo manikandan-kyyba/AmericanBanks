@@ -80,7 +80,7 @@ const CheckStatusIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'CheckStatusIntent';
     },
     handle(handlerInput) {
-        const speakOutput = 'Check 412 in the amount of $125.59 was debited to your account on May 3, 2020';
+        const speakOutput = 'Check 412 for the amount of $125.59 was debited from your account on May 3rd, 2020.';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -95,7 +95,7 @@ const LastDepositeStatusIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'LastDepositeStatusIntent';
     },
     handle(handlerInput) {
-        const speakOutput = 'The last deposit into your account was in the amount of $1,000 on April 23, 2020';
+        const speakOutput = 'The last deposit into your account was in the amount of $1,000 on April 23rd, 2020';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -213,8 +213,11 @@ const SessionEndedRequestHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'SessionEndedRequest';
     },
     handle(handlerInput) {
+        const speakOutput = "GoodBye";
         // Any cleanup logic goes here.
-        return handlerInput.responseBuilder.getResponse();
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .getResponse();
     }
 };
 
