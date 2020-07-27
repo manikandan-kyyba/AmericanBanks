@@ -64,7 +64,7 @@ const WhichAccountIntentHandler = {
         // const accountInfo2 = await logic.currentBalance(accountInfo1.number, cardPin);
 
         // const speechText = `Your current balance as of today is $${accountInfo2.balance}`;
-        const speechText = `Your current balance as of (today) is $7,231.73`;
+        const speechText = `Your current balance as of today is $7,231.73`;
 
         return handlerInput.responseBuilder
             .speak(speechText)
