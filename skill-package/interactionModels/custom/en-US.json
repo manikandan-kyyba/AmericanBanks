@@ -53,14 +53,14 @@
           "name": "CheckStatusIntent",
           "slots": [],
           "samples": [
-            "Do you know if check four one two cleared"
+            "Do you know if check four one two has cleared"
           ]
         },
         {
           "name": "CheckStatusTwoIntent",
           "slots": [],
           "samples": [
-            "Do you know if check four one three for amount dollar three fifty cleared"
+            "Do you know if check four one three for amount dollar three fifty has cleared"
           ]
         },
         {
