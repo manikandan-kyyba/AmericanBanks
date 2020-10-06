@@ -57,6 +57,13 @@
           ]
         },
         {
+          "name": "CheckStatusTwoIntent",
+          "slots": [],
+          "samples": [
+            "Do you know if check four one three for amount dollar three fifty cleared"
+          ]
+        },
+        {
           "name": "SwitchAccountIntent",
           "slots": [
             {

@@ -32,6 +32,7 @@ Alexa:
 
 You
     Has check 412 cleared
+    Do you know if check four one two cleared
 
 Alexa
     Check 412 in the amount of $125.59 was debited to your account on May 3, 2020

@@ -3,7 +3,7 @@
 const Alexa = require('ask-sdk-core');
 const logic = require('./logic'); // this file encapsulates all "business" logic
 
-const moment = require('moment-timezone'); 
+const moment = require('moment-timezone');
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -65,7 +65,7 @@ const WhichAccountIntentHandler = {
 
         // const speechText = `Your current balance as of today is $${accountInfo2.balance}`;
         // const speechText = `Your current balance as of today is $7,231.73`;
-        const speechText = `Your current balance for account 7 6 8 7 9 8 7 6 7 8 6 5 is $7,231.73`;        
+        const speechText = `Your current balance for account 7 6 8 7 9 8 7 6 7 8 6 5 is $7,231.73`;
 
         return handlerInput.responseBuilder
             .speak(speechText)
@@ -80,7 +80,22 @@ const CheckStatusIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'CheckStatusIntent';
     },
     handle(handlerInput) {
-        const speakOutput = 'Check 412 for the amount of $125.59 was debited from your account on May 3rd, 2020.';
+        const speakOutput = 'Check 412 for the amount of $125.59 was debited from your account on May 3rd, 2020';
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+
+const CheckStatusTwoIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'CheckStatusTwoIntent';
+    },
+    handle(handlerInput) {
+        const speakOutput = 'No check 413 has not been deposited for clearance yet';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -274,6 +289,9 @@ exports.handler = Alexa.SkillBuilders.custom()
         WhichBankIntentHandler,
         WhichAccountIntentHandler,
         CheckStatusIntentHandler,
+        CheckStatusTwoIntentHandler,
+
+
         LastDepositeStatusIntentHandler,
         SwitchAccountIntentHandler,
         CurrentBankIntentHandler,
