@@ -1,48 +1,50 @@
-Alexa / Google Home POC’s
 
-Context:
+You:
+    Alexa, open smark banking services
 
-Alexa skill that allows bank customer to enquire bank account information
+Alexa:
+    Welcome to Smart banking. What would you like to do?
 
+You:
+    check my bank account
 
-You
-Alexa check my bank account
+Alexa:
+    OK. Bank Account. Which Bank
 
-Alexa
-OK. Bank Account. Which Bank
+You:
+    Comerica
 
-You
-Chase
+Alexa:
+    You have 3 accounts in that bank; say the last 4 digits of the account you want to check
 
-Alexa
-You have 3 accounts in that bank; say the last 4 digits of the account you want to check
+You:
+    7865
 
-You
-7865
+Alexa:
+    Accessing your bank account
 
-Alexa
-Accessing your bank account
+Alexa:
+    Please say you bank card PIN
 
-Alex
-Please say you bank card PIN
+You:
+    1390
 
-You
-1390
-
-Alexa
-Your current balance as of (today) is $7,231.73
-
-Alexa
-What next? Say repeat if you want me to repeat the last response or say Exit to end this request
+Alexa:
+    Your current balance as of (today) is $7,231.73
+    Your current balance for account 768798767865 is $7,231.73
 
 You
-Has check 412 cleared?
+    Has check 412 cleared
 
 Alexa
-Check 412 in the amount of $125.59 was debited to your account on May 3, 2020
+    Check 412 in the amount of $125.59 was debited to your account on May 3, 2020
+
+You
+    Has check 413 for amount $350 cleared
 
 Alexa
-What next? Say repeat if you want me to repeat the last response or say Exit to end this request
+    No check 413 has not been deposited for clearance yet
+
 
 You
 When was the last deposit into my account

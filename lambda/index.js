@@ -3,7 +3,7 @@
 const Alexa = require('ask-sdk-core');
 const logic = require('./logic'); // this file encapsulates all "business" logic
 
-const moment = require('moment-timezone');
+const moment = require('moment-timezone'); 
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -64,13 +64,13 @@ const WhichAccountIntentHandler = {
         // const accountInfo2 = await logic.currentBalance(accountInfo1.number, cardPin);
 
         // const speechText = `Your current balance as of today is $${accountInfo2.balance}`;
-        const speechText = `Your current balance as of today is $7,231.73`;
+        // const speechText = `Your current balance as of today is $7,231.73`;
+        const speechText = `Your current balance for account 768798767865 is $7,231.73`;        
 
         return handlerInput.responseBuilder
             .speak(speechText)
             .reprompt(speechText)
             .getResponse();
-
     }
 };
 
