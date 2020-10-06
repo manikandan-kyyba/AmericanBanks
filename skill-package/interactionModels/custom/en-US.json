@@ -20,6 +20,49 @@
           "samples": []
         },
         {
+          "name": "QuestionOneIntent",
+          "slots": [],
+          "samples": [
+            "Pay Bills"
+          ]
+        },
+        {
+          "name": "QuestionTwoIntent",
+          "slots": [],
+          "samples": [
+            "The payment must be sent to DTE Energy"
+          ]
+        },
+        {
+          "name": "QuestionThreeIntent",
+          "slots": [],
+          "samples": [
+            "Please pay dollar three hundred and twenty and fifty nine cents"
+          ]
+        },
+        {
+          "name": "QuestionFourIntent",
+          "slots": [],
+          "samples": [
+            "Yes I confirm"
+          ]
+        },
+        {
+          "name": "QuestionFiveIntent",
+          "slots": [],
+          "samples": [
+            "The payment must be made on twenty seven th october twenty twenty",
+            "The payment must be made on"
+          ]
+        },
+        {
+          "name": "QuestionSixIntent",
+          "slots": [],
+          "samples": [
+            "Yes that is right"
+          ]
+        },
+        {
           "name": "WhichBankIntent",
           "slots": [
             {

@@ -5,6 +5,8 @@ const logic = require('./logic'); // this file encapsulates all "business" logic
 
 const moment = require('moment-timezone');
 
+const AppName = 'Smart Banking Services';
+
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
@@ -104,6 +106,96 @@ const CheckStatusTwoIntentHandler = {
     }
 };
 
+const QuestionOneIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'QuestionOneIntent';
+    },
+    handle(handlerInput) {
+        const speakOutput = 'OK. Pay Bills. Please tell me who the payment must be sent to?';
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .withSimpleCard(AppName, speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+
+const QuestionTwoIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'QuestionTwoIntent';
+    },
+    handle(handlerInput) {
+        const speakOutput = 'OK. DTE Energy. What is the amount to be paid?';
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .withSimpleCard(AppName, speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+
+const QuestionThreeIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'QuestionThreeIntent';
+    },
+    handle(handlerInput) {
+        const speakOutput = 'Did you say $320.59? Say Yes to confirm or No to state the right amount.';
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .withSimpleCard(AppName, speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+
+const QuestionFourIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'QuestionFourIntent';
+    },
+    handle(handlerInput) {
+        const speakOutput = 'OK. What is the date on which the payment must be made?';
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .withSimpleCard(AppName, speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+
+const QuestionFiveIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'QuestionFiveIntent';
+    },
+    handle(handlerInput) {
+        const speakOutput = 'Ok. Bank will send a payment of $320.59 to DTE Energy on Oct 27th 2020. Is that correct? Say Yes to confirm. Say No to restate the request.';
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .withSimpleCard(AppName, speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+
+const QuestionSixIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'QuestionSixIntent';
+    },
+    handle(handlerInput) {
+        const speakOutput = 'OK. Bank will send a payment of $320.59 to DTE Energy on Oct 27th 2020';
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .withSimpleCard(AppName, speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+
 const LastDepositeStatusIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -148,7 +240,8 @@ const CurrentBankIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'CurrentBankIntent';
     },
     handle(handlerInput) {
-        const speakOutput = 'Your current bank as of today is $12,343.98';
+        // const speakOutput = 'Your current balance as of today is $12,343.98'; // 1256
+        const speakOutput = `Your current balance for account 8 7 8 7 9 8 7 6 1 2 5 6 is $12,343.98`;
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -291,6 +384,12 @@ exports.handler = Alexa.SkillBuilders.custom()
         CheckStatusIntentHandler,
         CheckStatusTwoIntentHandler,
 
+        QuestionOneIntentHandler,
+        QuestionTwoIntentHandler,
+        QuestionThreeIntentHandler,
+        QuestionFourIntentHandler,
+        QuestionFiveIntentHandler,
+        QuestionSixIntentHandler,
 
         LastDepositeStatusIntentHandler,
         SwitchAccountIntentHandler,
