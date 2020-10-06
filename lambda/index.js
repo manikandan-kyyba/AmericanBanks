@@ -65,7 +65,7 @@ const WhichAccountIntentHandler = {
 
         // const speechText = `Your current balance as of today is $${accountInfo2.balance}`;
         // const speechText = `Your current balance as of today is $7,231.73`;
-        const speechText = `Your current balance for account 768798767865 is $7,231.73`;        
+        const speechText = `Your current balance for account (768798767865) is $7,231.73`;        
 
         return handlerInput.responseBuilder
             .speak(speechText)

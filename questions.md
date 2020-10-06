@@ -1,6 +1,6 @@
 
 You:
-    Alexa, open smark banking services
+    Alexa, open smart banking services
 
 Alexa:
     Welcome to Smart banking. What would you like to do?
@@ -18,13 +18,10 @@ Alexa:
     You have 3 accounts in that bank; say the last 4 digits of the account you want to check
 
 You:
-    7865
+    seven eight six five
 
 Alexa:
-    Accessing your bank account
-
-Alexa:
-    Please say you bank card PIN
+    Accessing your bank account, Please say you bank card PIN
 
 You:
     1390
